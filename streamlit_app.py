@@ -56,6 +56,6 @@ combined_leaderboard = combined_leaderboard.sort_values('Score', ascending=False
 
 print(combined_leaderboard)
 
-st.sidebar.markdown('''
+st.markdown('''
 Created By Abatan Ayodeji (Agroall)
 ''')
