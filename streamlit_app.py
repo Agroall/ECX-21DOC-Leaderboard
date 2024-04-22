@@ -9,9 +9,9 @@ st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('style.css') as f:
     st.markdown(f'<style>(f.read())</style>', unsafe_allow_html=True)
 
-view = df.style.set_table_styles([{'selector': '', 'props': [('text-align', 'center')]}])  # Center align all elements
+# view = df.style.set_table_styles([{'selector': '', 'props': [('text-align', 'center')]}])  # Center align all elements
 
-st.dataframe(view.to_html(), unsafe_allow_html=True)
+# st.dataframe(view.to_html(), unsafe_allow_html=True)
 
 
 # Streamlit app
@@ -58,11 +58,23 @@ combined_leaderboard = combined_leaderboard.drop(indices_without_email).reset_in
 # Sorting the combined leaderboard by score in descending order
 combined_leaderboard = combined_leaderboard.sort_values('Score', ascending=False).reset_index(drop=True)
 
+
+view = combined_leaderboard.style \
+  .set_properties(align='center') \
+  .set_table_styles([
+    {'selector': 'th', 'props': [('background-color', 'lightblue')]},
+    {'selector': 'td', 'props': [('font-style', 'italic')]}
+  ])
+
+st.dataframe(view)
+
+
+
 # st.dataframe(combined_leaderboard)
-st.table(combined_leaderboard, table_style=[{'selector': '', 'props': [('width', '70%')]}] +  # Set width
-         [{'selector': 'th', 'props': [('background-color', '#4CAF50'), ('color', 'white'), ('text-align', 'center')]}] +  # Style header
-         [{'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f2f2f2')]}]  # Alternate row color
-)
+# st.table(combined_leaderboard, table_style=[{'selector': '', 'props': [('width', '70%')]}] +  # Set width
+#          [{'selector': 'th', 'props': [('background-color', '#4CAF50'), ('color', 'white'), ('text-align', 'center')]}] +  # Style header
+#          [{'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f2f2f2')]}]  # Alternate row color
+# )
 st.markdown('''
 Created By Abatan Ayodeji (Agroall)
 ''')
