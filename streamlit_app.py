@@ -54,7 +54,7 @@ combined_leaderboard = combined_leaderboard.drop(indices_without_email).reset_in
 # Sorting the combined leaderboard by score in descending order
 combined_leaderboard = combined_leaderboard.sort_values('Score', ascending=False).reset_index(drop=True)
 
-print(combined_leaderboard)
+st.dataframe(combined_leaderboard)
 
 st.markdown('''
 Created By Abatan Ayodeji (Agroall)
