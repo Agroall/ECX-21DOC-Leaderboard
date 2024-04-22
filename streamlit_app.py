@@ -30,9 +30,10 @@ for sheet_name in sheetnames:
   data = response.json()
   df = pd.DataFrame.from_dict(data[sheet_name])
   df['Track'] = sheet_name
+  df.drop(columns=['id'], inplace=True)
   df.columns = ['Email', 'Name', 'Score', 'Track']
   df = df[['Name', 'Email', 'Track', 'Score']]
-  df = df.iloc[2:-1, :]
+  df = df.iloc[1:-1, :]
   df_list.append(df)
 
 # Combining the processed data into a single leaderboard
@@ -53,8 +54,6 @@ combined_leaderboard = combined_leaderboard.drop(indices_without_email).reset_in
 # Sorting the combined leaderboard by score in descending order
 combined_leaderboard = combined_leaderboard.sort_values('Score', ascending=False).reset_index(drop=True)
 
-# Removing unnecessary index columns and printing the modified dataframe
-combined_leaderboard = combined_leaderboard.drop(columns=['index'])
 print(combined_leaderboard)
 
 # st.sidebar.markdown('''
