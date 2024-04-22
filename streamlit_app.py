@@ -22,7 +22,7 @@ st.markdown(' ')
 sheety_url = "https://api.sheety.co/251448a2cce340bfd433a10be3a376c8/ecx21DocLeaderboard/"
 sheetnames = ["backEnd", "dataAnalytics", "dataScience", "dsa", "frontEnd", "python"]
 
-df = []
+df_list = []
 
 for sheet_name in sheetnames:
   response = requests.get(sheety_url+sheet_name)
@@ -51,7 +51,9 @@ for index in indices_without_email:
 combined_leaderboard = combined_leaderboard.drop(indices_without_email).reset_index()
 
 # Print the modified dataframe
-print(combined_leaderboard.sort_value('score'))
+combined_leaderboard = combined_leaderboard.sort_values('Score',ascending=False).reset_index()
+combined_leaderboard = combined_leaderboard.drop(columns=['index','level_0'])
+combined_leaderboard
 
 # st.sidebar.markdown('''
 # Created By Abatan Ayodeji (Agroall) For Dicey Tech Hackathon.
