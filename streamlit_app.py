@@ -59,18 +59,18 @@ combined_leaderboard = combined_leaderboard.drop(indices_without_email).reset_in
 combined_leaderboard = combined_leaderboard.sort_values('Score', ascending=False).reset_index(drop=True)
 
 
-view = combined_leaderboard.style \
-  .set_properties(align='center') \
-  .set_table_styles([
-    {'selector': 'th', 'props': [('background-color', 'lightblue')]},
-    {'selector': 'td', 'props': [('font-style', 'italic')]}
-  ])
+# view = combined_leaderboard.style \
+#   .set_properties(align='center') \
+#   .set_table_styles([
+#     {'selector': 'th', 'props': [('background-color', 'lightblue')]},
+#     {'selector': 'td', 'props': [('font-style', 'italic')]}
+#   ])
 
-st.dataframe(view)
+# st.dataframe(view)
 
 
 
-# st.dataframe(combined_leaderboard)
+st.dataframe(combined_leaderboard)
 # st.table(combined_leaderboard, table_style=[{'selector': '', 'props': [('width', '70%')]}] +  # Set width
 #          [{'selector': 'th', 'props': [('background-color', '#4CAF50'), ('color', 'white'), ('text-align', 'center')]}] +  # Style header
 #          [{'selector': 'tr:nth-child(even)', 'props': [('background-color', '#f2f2f2')]}]  # Alternate row color
