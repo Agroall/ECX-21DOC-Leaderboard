@@ -50,3 +50,23 @@ footer.css-12gp8ed.eknhn3m4 {
 div.vg-tooltip-element {
   display: none;
 }
+
+
+
+css = """
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+"""
