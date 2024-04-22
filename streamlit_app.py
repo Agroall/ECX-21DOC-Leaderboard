@@ -9,7 +9,7 @@ st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 with open('style.css') as f:
     st.markdown(f'<style>(f.read())</style>', unsafe_allow_html=True)
 
-view = df.style.set_table_styles([{'selector': '', 'props': [('text-align', 'center')]}]  # Center align all elements)
+view = df.style.set_table_styles([{'selector': '', 'props': [('text-align', 'center')]}])  # Center align all elements
 
 st.dataframe(view.to_html(), unsafe_allow_html=True)
 
