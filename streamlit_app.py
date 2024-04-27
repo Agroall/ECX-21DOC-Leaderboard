@@ -16,9 +16,9 @@ st.markdown(' ')
 st.markdown(' ')
 
 
-# sheety_url = "https://api.sheety.co/097b4a3f537750e3e0047ddb28076c44/generalLeaderboard/"
-# sheetnames = ["backEnd", "dataAnalytics", "dataScience", "dsa", "frontEnd", "python"]
-# tracknames = ['Back-End', 'Data Analytics', 'Data Science', 'DSA', 'Front-End', 'Python']
+sheety_url = "https://api.sheety.co/097b4a3f537750e3e0047ddb28076c44/generalLeaderboard/"
+sheetnames = ["backEnd", "dataAnalytics", "dataScience", "dsa", "frontEnd", "python"]
+tracknames = ['Back-End', 'Data Analytics', 'Data Science', 'DSA', 'Front-End', 'Python']
 
 df_list = []
 
