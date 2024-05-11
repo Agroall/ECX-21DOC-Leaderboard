@@ -52,10 +52,11 @@ st.markdown(' ')
 # # Dropping the rows without emails
 # combined_leaderboard = combined_leaderboard.drop(indices_without_email).reset_index(drop=True)
 
+combined_leaderboard = pd.read_csv('Combined_leaderboard (1).csv')
 
-# # Sorting the combined leaderboard by score in descending order
-# combined_leaderboard=combined_leaderboard.drop(columns=['Email'])
-# combined_leaderboard = combined_leaderboard.sort_values('Score', ascending=False).reset_index(drop=True)
+# Sorting the combined leaderboard by score in descending order
+combined_leaderboard=combined_leaderboard.drop(columns=['Email'])
+combined_leaderboard = combined_leaderboard.sort_values('Score', ascending=False).reset_index(drop=True)
 
 
 view = combined_leaderboard.style \
