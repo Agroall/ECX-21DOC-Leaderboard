@@ -56,6 +56,7 @@ combined_leaderboard = pd.read_csv('Combined_leaderboard (1).csv')
 
 # Sorting the combined leaderboard by score in descending order
 combined_leaderboard=combined_leaderboard.drop(columns=['Email'])
+combined_leaderboard=combined_leaderboard.drop(columns=['Unnamed: 0']
 combined_leaderboard = combined_leaderboard.sort_values('Score', ascending=False).reset_index(drop=True)
 
 
